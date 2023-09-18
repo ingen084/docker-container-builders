@@ -23,7 +23,7 @@ jobs:
           username: ${{ secrets.CR_USERNAME }}
           password: ${{ secrets.CR_PASS }}
       - name: Build and push
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./KEViBot.Dockerfile
