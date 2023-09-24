@@ -9,6 +9,7 @@ on:
       push:
         description: 'Docker イメージをプッシュするかどうか'
         required: true
+        type: boolean
         default: 'false'
 jobs:
   build-and-push:
