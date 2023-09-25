@@ -30,7 +30,7 @@ jobs:
           repository: misskey-dev/misskey
           path: misskey
       - name: Build and push
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
           context: misskey
           push: ${{ inputs.push }}
