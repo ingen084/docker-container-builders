@@ -12,6 +12,11 @@ on:
         required: true
         type: boolean
         default: 'false'
+      misskey-ref:
+        description: 'misskeyリポジトリのタグ'
+        type: string
+        required: true
+        default: 'develop'
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -29,6 +34,7 @@ jobs:
         with:
           repository: misskey-dev/misskey
           path: misskey
+          ref: ${{ inputs.misskey-ref }}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
