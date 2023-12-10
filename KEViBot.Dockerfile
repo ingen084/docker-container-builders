@@ -14,4 +14,4 @@ ENV TZ=Asia/Tokyo
 WORKDIR /app
 RUN apt-get update; apt-get install libfontconfig1 libfreetype6 libglib2.0-bin -y
 COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "SlackBot.dll"]
+ENTRYPOINT ["SlackBot"]
