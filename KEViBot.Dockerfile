@@ -12,6 +12,7 @@ RUN dotnet publish -c Release -r linux-x64 -o /app/out
 FROM debian:stable-slim
 ENV TZ=Asia/Tokyo
 WORKDIR /app
-RUN apt-get update; apt-get install libfontconfig1 libfreetype6 libglib2.0-bin -y
+RUN apt-get update; apt-get install libfontconfig1 libfreetype6 libglib2.0-bin libssl-dev ca-certificate -y
+RUN rm -rf /var/lib/apt/lists/*
 COPY --from=build-env /app/out .
 CMD ["SlackBot"]
