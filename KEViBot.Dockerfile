@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
 
 RUN apt update && apt install -y git
-RUN git clone https://github.com/ingen084/KyoshinEewViewerIngen.git
+RUN git clone https://github.com/ingen084/KyoshinEewViewerIngen.git && git submodule init && git submodule update
 
 WORKDIR /app/KyoshinEewViewerIngen/src/Sandboxes/SlackBot
 RUN dotnet publish -c Release -r linux-x64 -o /app/out --no-self-contained
