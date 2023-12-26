@@ -9,7 +9,7 @@ WORKDIR /app/KyoshinEewViewerIngen/src/Sandboxes/SlackBot
 RUN dotnet publish -c Release -r linux-x64 -o /app/out
 
 # Build runtime image
-FROM mcr.microsoft.com/dotnet/runtime:8.0
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 ENV TZ=Asia/Tokyo
 WORKDIR /app
 RUN apt-get update; apt-get install libfontconfig1 libfreetype6 libglib2.0-bin libssl-dev ca-certificates -y
