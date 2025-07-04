@@ -16,7 +16,7 @@ on:
         description: 'リポジトリのタグ'
         type: string
         required: true
-        default: 'develop'
+        default: 'master'
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
