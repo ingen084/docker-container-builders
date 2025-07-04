@@ -38,6 +38,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: stratify/src
+          context: stratify
           push: ${{ inputs.push }}
           tags: cr.ingen.work/stratify-s3:${{ inputs.tag }}
