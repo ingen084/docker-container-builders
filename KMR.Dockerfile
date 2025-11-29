@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build-env
 WORKDIR /app
 
 RUN apt update && apt install -y git
-RUN git clone -b lm-exp https://github.com/ingen084/KyoshinEewViewerIngen.git
+RUN git clone -b ml-exp https://github.com/ingen084/KyoshinEewViewerIngen.git
 RUN cd KyoshinEewViewerIngen && git submodule init && git submodule update
 
 WORKDIR /app/KyoshinEewViewerIngen/src/Tools/KyoshinMonitorRecorder
